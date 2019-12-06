@@ -1,0 +1,80 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.section {
+	padding: 40px 0;
+	&--p-small {
+		padding: 20px 0;
+	}
+	&--shadow {
+		box-shadow: 0px 4px 7px rgba(black, .05);
+	}
+	&--bg-grey {
+		background: #EDEDED;
+	}
+}
+
+.icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.live {
+	&__item {
+		position: relative;
+		overflow: hidden;
+		height: 172px;
+
+		> img {
+			position: absolute;
+			height: 100%;
+			width: auto;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+}
+
+.grid {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	&-sizer,
+	&-item {
+		width: calc(25% - 36px * 3 / 4); //4
+
+		@include media-breakpoint-down(lg) {
+			width: calc(100% / 3 - 36px * 2 / 3); //3
+		}
+
+		@include media-breakpoint-down(md) {
+			width: calc(50% - 36px / 2); //2
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%; //1
+		}
+	}
+
+	&-item {
+		height: 120px;
+		float: left;
+		background: grey;
+		border-color: hsla(0, 0%, 0%, 0.5);
+		margin-bottom: 36px;
+	
+		&--height2 { height: 200px; }
+		&--height3 { height: 260px; }
+		&--height4 { height: 360px; }
+	}
+}
+
+.gutter-sizer {
+	width: 36px;
+}
